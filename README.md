@@ -10,3 +10,11 @@
 1. Установите зависимости (рекомендуется использовать виртуальное окружение):
    ```bash
    pip install -r requirements.txt
+
+2. Перейдите в файл проекта
+    ```bash
+    cd .\coffee_report\
+
+3. Запустите проект, через команду в терминале
+    ```bash
+     python main.py --files [НАЗВАНИЕ_ФАЙЛА.csv] --report median-coffee
