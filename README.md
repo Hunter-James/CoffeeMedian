@@ -18,3 +18,7 @@
 3. Запустите проект, через команду в терминале
     ```bash
      python main.py --files [НАЗВАНИЕ_ФАЙЛА.csv] --report median-coffee
+
+4. Запуск тестов:
+   ```bash
+   python -m pytest tests/ --cov=.
