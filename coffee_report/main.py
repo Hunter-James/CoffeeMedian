@@ -6,6 +6,12 @@ from typing import List, Dict
 from tabulate import tabulate
 from reports import REPORT_REGISTRY
 
+class CustomArgumentParser(argparse.ArgumentParser):
+    def error(self, message):
+        print(f"\n Ошибка ввода: {message}", file=sys.stderr)
+        print("Убедитесь, что вы правильно указали названия аргументов: --files и --report", file=sys.stderr)
+        print("Пример запуска: python main.py --files math.csv --report median-coffee\n", file=sys.stderr)
+        sys.exit(2)
 
 def read_csv_files(file_paths: List[str]) -> List[Dict[str, str]]:
     data = []
@@ -24,7 +30,7 @@ def read_csv_files(file_paths: List[str]) -> List[Dict[str, str]]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Генератор отчетов об успеваемости и тратах студентов.")
+    parser = CustomArgumentParser(description="Генератор отчетов об успеваемости и тратах студентов.")
     parser.add_argument(
         "--files",
         nargs="+",
