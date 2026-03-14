@@ -22,3 +22,5 @@
 4. Запуск тестов:
    ```bash
    python -m pytest tests/ --cov=.
+
+<img width="1274" height="447" alt="Image" src="https://github.com/user-attachments/assets/906c6603-aa6b-42b3-9af7-12cae6819f95" />
